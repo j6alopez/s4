@@ -1,7 +1,7 @@
 import fetch, {Headers, Response} from 'node-fetch';
-import {Joke} from '../jokes/joke';
+import {Joke} from '../jokes/Joke';
 
-class JokeService {
+export class JokeService {
   private BASE_URL = 'https://icanhazdadjoke.com';
 
   async getJoke(): Promise<Joke> {

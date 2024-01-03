@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.JokeService = void 0;
 const node_fetch_1 = require("node-fetch");
 class JokeService {
     BASE_URL = 'https://icanhazdadjoke.com';
@@ -22,4 +23,5 @@ class JokeService {
         }
     }
 }
+exports.JokeService = JokeService;
 //# sourceMappingURL=JokeService.js.map

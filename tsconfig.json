@@ -6,7 +6,8 @@
     "outDir": "./dist",
     "checkJs" : true,
     "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "lib": ["dom"]
   },
   "include": [
     "src/**/*.ts",

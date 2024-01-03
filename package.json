@@ -1,4 +1,6 @@
 {
+  "name": "examples",
+  "version": "1.0.0",
   "devDependencies": {
     "@types/node": "20.8.2",
     "@types/node-fetch": "^2.6.10",

@@ -7,14 +7,15 @@
 	<!-- Customization with bootstrap-->
     <link rel="stylesheet" href="css/styles.css">  
 </head>
-<body>
+<body onload="updateJoke()">
     <div class="container">
         <div class="row">
-            <p class="text" id = "joke">Lorem fistrum ese que llega no te digo trigo por no llamarte Rodrigor llevame al sircoo se calle ustée. Amatomaa jarl va usté muy cargadoo qué dise usteer a gramenawer no te digo trigo por no llamarte Rodrigor.
+            <p class="text" id="joke">Lorem fistrum ese que llega no te digo trigo por no llamarte Rodrigor llevame al sircoo se calle ustée. Amatomaa jarl va usté muy cargadoo qué dise usteer a gramenawer no te digo trigo por no llamarte Rodrigor.
             Va usté muy cargadoo al ataquerl diodeno no puedor a wan no te digo trigo por no llamarte Rodrigor te voy a borrar el cerito la caidita caballo blanco caballo negroorl de la pradera a peich. Pecador torpedo sexuarl te voy a borrar el cerito.</p>
-            <button class ="btn btn-primary" type="button">Next Joke</button>
+            <button class="btn btn-primary col-6 mx-auto d-block" onclick="updateJoke()">Next Joke</button>
         </div>
     </div>
+    <script src="dist/client/update.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
