@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,12 +7,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateJoke = void 0;
-const JokeService_js_1 = require("../domain/JokeService.js");
-function updateJoke() {
+import { JokeService } from '../domain/JokeService.js';
+export function updateJoke() {
     return __awaiter(this, void 0, void 0, function* () {
-        const jokeService = new JokeService_js_1.JokeService();
+        const jokeService = new JokeService();
         const data = yield jokeService.getJoke();
         const jokeElement = document.getElementById('joke');
         if (jokeElement !== null) {
@@ -21,5 +18,4 @@ function updateJoke() {
         }
     });
 }
-exports.updateJoke = updateJoke;
 //# sourceMappingURL=updateJoke.js.map
