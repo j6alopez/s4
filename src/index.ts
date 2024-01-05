@@ -1,33 +1,29 @@
-console.log('Try npm run lint/fix!');
-
-const longString =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet diam.';
-
-const trailing = 'Semicolon';
-
-const why = {am: 'I tabbed?'};
-
-const iWish = "I didn't have a trailing space...";
-
-const sicilian = true;
-
-const vizzini = sicilian ? !sicilian : sicilian;
-
-const re = /foo {3}bar/;
-
-export function doSomeStuff(
-  withThis: string,
-  andThat: string,
-  andThose: string[]
-) {
-  //function on one line
-  if (!andThose.length) {
-    return false;
+async function updateJoke(): Promise<void> {
+  interface Joke {
+    id: string;
+    joke: string;
+    status: number;
   }
-  console.log(withThis);
-  console.log(andThat);
-  console.dir(andThose);
-  console.log(longString, trailing, why, iWish, vizzini, re);
-  return;
+
+  const httpHeaders: Headers = new Headers();
+  httpHeaders.append('Accept', 'application/json');
+  const BASE_URL = 'https://icanhazdadjoke.com';
+  try {
+    const response: Response = await fetch(BASE_URL, {
+      method: 'GET',
+      headers: httpHeaders,
+    });
+
+    if (!response.ok) {
+      throw new Error('Joke was not possible to retrieve!');
+    }
+
+    const data: Joke = await response.json();
+    const jokeElement: HTMLElement | null = document.getElementById('joke');
+    if (jokeElement !== null) {
+      jokeElement.innerText = data.joke;
+    }
+  } catch (error) {
+    throw new Error('Somehting wrong happened!');
+  }
 }
-// TODO: more examples

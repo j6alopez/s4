@@ -1,5 +1,4 @@
-import fetch, {Headers, Response} from 'node-fetch';
-import {Joke} from '../jokes/Joke';
+import {Joke} from './Joke.js';
 
 export class JokeService {
   private BASE_URL = 'https://icanhazdadjoke.com';
