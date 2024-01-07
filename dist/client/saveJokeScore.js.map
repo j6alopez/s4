@@ -1,0 +1,1 @@
+{"version":3,"file":"saveJokeScore.js","sourceRoot":"","sources":["../../src/client/saveJokeScore.ts"],"names":[],"mappings":"AACA,OAAO,EAAC,WAAW,EAAC,MAAM,mCAAmC,CAAC;AAE9D,MAAM,UAAU,aAAa,CAAC,KAAgB;IAC5C,MAAM,WAAW,GAAgB,IAAI,WAAW,EAAE,CAAC;IACnD,WAAW,CAAC,SAAS,CAAC,KAAK,CAAC,CAAC;AAC/B,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"JokeScore.js","sourceRoot":"","sources":["../../src/domain/JokeScore.ts"],"names":[],"mappings":"AAEA,MAAM,OAAO,SAAS;IAKpB,YAAY,IAAY,EAAE,IAAY,EAAE,KAAgB;QACtD,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;QACjB,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;QACjB,IAAI,CAAC,KAAK,GAAG,KAAK,CAAC;IACrB,CAAC;CACF"}

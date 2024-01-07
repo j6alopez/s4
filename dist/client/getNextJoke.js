@@ -8,14 +8,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { JokeService } from '../domain/services/JokeService.js';
-export function updateJoke() {
+export function getNextJoke() {
     return __awaiter(this, void 0, void 0, function* () {
         const jokeService = new JokeService();
-        const data = yield jokeService.getJoke();
+        const recievedJoke = yield jokeService.getJoke();
         const jokeElement = document.getElementById('joke');
         if (jokeElement !== null) {
-            jokeElement.innerText = data.joke;
+            jokeElement.innerText = recievedJoke.joke;
+            jokeService.trackJoke(recievedJoke);
         }
     });
 }
-//# sourceMappingURL=updateJoke.js.map
+//# sourceMappingURL=getNextJoke.js.map
