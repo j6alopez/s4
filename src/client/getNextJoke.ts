@@ -1,5 +1,6 @@
 import {Joke} from '../domain/entitites/Joke.js';
 import {JokeService} from '../domain/services/JokeService.js';
+import { jokesWithScores } from '../index.js';
 
 export async function getNextJoke(): Promise<void> {
   const jokeService: JokeService = new JokeService();
@@ -9,5 +10,6 @@ export async function getNextJoke(): Promise<void> {
   if (jokeElement !== null) {
     jokeElement.innerText = recievedJoke.joke;
     jokeService.trackJoke(recievedJoke);
+    console.log(jokesWithScores);
   }
 }

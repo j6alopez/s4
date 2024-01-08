@@ -30,13 +30,13 @@ export class JokeService {
 
   trackJoke(joke: Joke): void {
     const timeStamp = new Date().toISOString();
-    jokesWithScores.push(JokeMapper.mapJokeToScore(joke, timeStamp));
+    const jokeScore: JokeScore = JokeMapper.mapJokeToScore(joke, timeStamp);
+    jokesWithScores.push(jokeScore);
   }
 
   scoreJoke(score: ScoreType): void {
     const lastElement = jokesWithScores.length - 1;
     const jokeScore: JokeScore = jokesWithScores[lastElement];
     jokeScore.score = score;
-    console.log(jokesWithScores);
   }
 }

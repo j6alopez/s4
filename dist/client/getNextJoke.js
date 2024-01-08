@@ -8,6 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { JokeService } from '../domain/services/JokeService.js';
+import { jokesWithScores } from '../index.js';
 export function getNextJoke() {
     return __awaiter(this, void 0, void 0, function* () {
         const jokeService = new JokeService();
@@ -16,6 +17,7 @@ export function getNextJoke() {
         if (jokeElement !== null) {
             jokeElement.innerText = recievedJoke.joke;
             jokeService.trackJoke(recievedJoke);
+            console.log(jokesWithScores);
         }
     });
 }

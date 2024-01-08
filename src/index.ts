@@ -1,7 +1,7 @@
-import {getNextJoke} from './client/getNextJoke';
-import {saveJokeScore} from './client/saveJokeScore';
-import {JokeScore} from './domain/entitites/JokeScore';
-import {ScoreType} from './domain/enums/ScoreType';
+import {getNextJoke} from './client/getNextJoke.js';
+import {saveJokeScore} from './client/saveJokeScore.js';
+import {JokeScore} from './domain/entitites/JokeScore.js';
+import {ScoreType} from './domain/enums/ScoreType.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   getNextJoke();
@@ -23,4 +23,4 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 });
 
-export let jokesWithScores: JokeScore[];
+export let jokesWithScores: JokeScore[] = [];

@@ -35,13 +35,13 @@ export class JokeService {
     }
     trackJoke(joke) {
         const timeStamp = new Date().toISOString();
-        jokesWithScores.push(JokeMapper.mapJokeToScore(joke, timeStamp));
+        const jokeScore = JokeMapper.mapJokeToScore(joke, timeStamp);
+        jokesWithScores.push(jokeScore);
     }
     scoreJoke(score) {
         const lastElement = jokesWithScores.length - 1;
         const jokeScore = jokesWithScores[lastElement];
         jokeScore.score = score;
-        console.log(jokesWithScores);
     }
 }
 //# sourceMappingURL=JokeService.js.map
