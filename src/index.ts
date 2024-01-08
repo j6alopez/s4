@@ -23,4 +23,4 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 });
 
-export let jokesWithScores: JokeScore[] = [];
+export const jokesWithScores: JokeScore[] = [];

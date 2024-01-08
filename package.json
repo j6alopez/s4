@@ -1,6 +1,9 @@
 {
   "name": "examples",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=10.0.0"
+  },
   "devDependencies": {
     "@types/node": "20.8.2",
     "gts": "^5.2.0",

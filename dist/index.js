@@ -12,5 +12,5 @@ document.addEventListener('DOMContentLoaded', () => {
     normalScoreButton === null || normalScoreButton === void 0 ? void 0 : normalScoreButton.addEventListener('click', () => saveJokeScore(ScoreType.NORMAL));
     goodScoreButton === null || goodScoreButton === void 0 ? void 0 : goodScoreButton.addEventListener('click', () => saveJokeScore(ScoreType.GOOD));
 });
-export let jokesWithScores = [];
+export const jokesWithScores = [];
 //# sourceMappingURL=index.js.map
