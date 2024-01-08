@@ -1,4 +1,4 @@
-import {UrlHelper} from '../../UrlHelper';
+import {UrlHelper} from '../../utilites/UrlHelper';
 import {User} from '../entitites/User';
 import {Weather} from '../entitites/Weather';
 export class WeatherService {
