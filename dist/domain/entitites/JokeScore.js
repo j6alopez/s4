@@ -1,6 +1,6 @@
 export class JokeScore {
-    constructor(joke, date, score) {
-        this.joke = joke;
+    constructor(value, date, score) {
+        this.value = value;
         this.date = date;
         this.score = score;
     }

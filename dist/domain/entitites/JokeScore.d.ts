@@ -1,7 +1,7 @@
 import { ScoreType } from '../enums/ScoreType';
 export declare class JokeScore {
-    joke: string;
+    value: string;
     date: string;
     score: ScoreType;
-    constructor(joke: string, date: string, score: ScoreType);
+    constructor(value: string, date: string, score: ScoreType);
 }

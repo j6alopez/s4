@@ -1,1 +1,1 @@
-{"version":3,"file":"Joke.js","sourceRoot":"","sources":["../../../src/domain/entitites/Joke.ts"],"names":[],"mappings":""}
+{"version":3,"file":"Joke.js","sourceRoot":"","sources":["../../../src/domain/entitites/Joke.ts"],"names":[],"mappings":"AAAA,MAAM,OAAO,IAAI;IAEf,YAAY,KAAa;QACvB,IAAI,CAAC,KAAK,GAAG,KAAK,CAAC;IACrB,CAAC;CACF"}

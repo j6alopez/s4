@@ -1,5 +1,6 @@
-export interface Joke {
-  id: string;
-  joke: string;
-  status: number;
+export class Joke {
+  value: string;
+  constructor(value: string) {
+    this.value = value;
+  }
 }

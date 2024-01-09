@@ -4,6 +4,8 @@ import {WeatherService} from '../domain/services/WeatherService';
 export async function updateCurrentWeather(): Promise<void> {
   const weatherService: WeatherService = new WeatherService();
   const weather: Weather = await weatherService.getCurrentWeather();
+  upDateWeatherIcon(weather);
+  upDateTemperature(weather);
 }
 
 function upDateWeatherIcon(weather: Weather): void {
@@ -15,9 +17,9 @@ function upDateWeatherIcon(weather: Weather): void {
 }
 
 function upDateTemperature(weather: Weather): void {
-  const icon: HTMLImageElement = document.getElementById('temperature-info') as HTMLImageElement;
+  const temperatureInfo: HTMLImageElement = document.getElementById('temperature-info') as HTMLImageElement;
 
-  if (icon) {
-    icon.src = weather.current.condition.icon;
+  if (temperatureInfo) {
+    temperatureInfo.src = `${weather.current.temp_c} ºC`;
   }
 }

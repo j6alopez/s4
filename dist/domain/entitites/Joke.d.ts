@@ -1,5 +1,4 @@
-export interface Joke {
-    id: string;
-    joke: string;
-    status: number;
+export declare class Joke {
+    value: string;
+    constructor(value: string);
 }

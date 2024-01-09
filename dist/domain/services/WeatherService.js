@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { UrlHelper } from '../../UrlHelper';
+import { UrlHelper } from '../../utilites/UrlHelper';
 export class WeatherService {
     constructor() {
         this.BASE_URL = 'http://api.weatherapi.com/v1/current.json';
