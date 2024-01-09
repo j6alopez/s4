@@ -25,7 +25,7 @@ function upDateWeatherIcon(weather) {
 function upDateTemperature(weather) {
     const temperatureInfo = document.getElementById('temperature-info');
     if (temperatureInfo) {
-        temperatureInfo.src = `${weather.temp_c} ºC`;
+        temperatureInfo.innerText = `${weather.temp_c} ºC`;
     }
 }
 //# sourceMappingURL=updateCurrentWeather.js.map

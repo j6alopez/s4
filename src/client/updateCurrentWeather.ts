@@ -21,6 +21,6 @@ function upDateTemperature(weather: CurrentWeather): void {
   const temperatureInfo: HTMLImageElement = document.getElementById('temperature-info') as HTMLImageElement;
 
   if (temperatureInfo) {
-    temperatureInfo.src = `${weather.temp_c} ºC`;
+    temperatureInfo.innerText = `${weather.temp_c} ºC`;
   }
 }
