@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { JokeMapper } from '../../mappers/JokeMapper.js';
 export class ChuckNorrisService {
     constructor() {
-        this.BASE_ULR = "https://api.chucknorris.io/jokes/random";
+        this.BASE_ULR = 'https://api.chucknorris.io/jokes/random';
     }
     getJoke() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -19,7 +19,7 @@ export class ChuckNorrisService {
             try {
                 const response = yield fetch(this.BASE_ULR, {
                     method: 'GET',
-                    headers: httpHeaders
+                    headers: httpHeaders,
                 });
                 if (!response.ok) {
                     throw new Error('ChuckNorris joke was not possible to retrieve');

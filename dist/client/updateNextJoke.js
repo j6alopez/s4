@@ -7,25 +7,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { WeatherService } from '../domain/services/WeatherService.js';
-export function updateCurrentWeather() {
+import { HazDadService } from '../domain/services/jokes/HazDadService.js';
+import { DefaultJokeScore } from '../domain/services/scores/DefaultJokeScore.js';
+import { jokesWithScores } from '../index.js';
+export function updateJoke() {
     return __awaiter(this, void 0, void 0, function* () {
-        const weatherService = new WeatherService();
-        const weather = yield weatherService.getCurrentWeather();
-        upDateWeatherIcon(weather);
-        upDateTemperature(weather);
+        const jokeService = new HazDadService();
+        const recievedJoke = yield jokeService.getJoke();
+        const jokeElement = document.getElementById('joke');
+        if (jokeElement !== null) {
+            const jokeScoreService = new DefaultJokeScore();
+            jokeElement.innerText = recievedJoke.value;
+            jokeScoreService.trackJoke(recievedJoke);
+            console.log(jokesWithScores);
+        }
     });
 }
-function upDateWeatherIcon(weather) {
-    const icon = document.getElementById('weather-icon');
-    if (icon) {
-        icon.src = weather.current.condition.icon;
-    }
-}
-function upDateTemperature(weather) {
-    const temperatureInfo = document.getElementById('temperature-info');
-    if (temperatureInfo) {
-        temperatureInfo.src = `${weather.current.temp_c} ºC`;
-    }
-}
-//# sourceMappingURL=updateCurrentWeather.js.map
+//# sourceMappingURL=updateNextJoke.js.map

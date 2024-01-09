@@ -1,5 +1,5 @@
-import { ChuckJokeDTO } from '../../dtos/ChuckJokeDTO.js';
-import { DadJokeDTO } from '../../dtos/DadJokeDTO.js';
+import {ChuckJokeDTO} from '../../dtos/ChuckJokeDTO.js';
+import {DadJokeDTO} from '../../dtos/DadJokeDTO.js';
 import {Joke} from '../entitites/Joke.js';
 import {JokeScore} from '../entitites/JokeScore.js';
 import {ScoreType} from '../enums/ScoreType.js';

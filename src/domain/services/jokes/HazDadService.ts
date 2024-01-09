@@ -1,7 +1,7 @@
-import { DadJokeDTO } from '../../../dtos/DadJokeDTO.js';
-import { Joke } from '../../entitites/Joke.js';
-import { JokeMapper } from '../../mappers/JokeMapper.js';
-import { JokeService } from './JokeService.js';
+import {DadJokeDTO} from '../../../dtos/DadJokeDTO.js';
+import {Joke} from '../../entitites/Joke.js';
+import {JokeMapper} from '../../mappers/JokeMapper.js';
+import {JokeService} from './JokeService.js';
 
 export class HazDadService implements JokeService {
   private readonly BASE_URL = 'https://icanhazdadjoke.com';

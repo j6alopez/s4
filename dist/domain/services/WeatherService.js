@@ -7,18 +7,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { UrlHelper } from '../../utilites/UrlHelper';
+import { UserConfig } from '../../config/UserConfig.js';
+import { UrlHelper } from '../../utilites/UrlHelper.js';
 export class WeatherService {
     constructor() {
         this.BASE_URL = 'http://api.weatherapi.com/v1/current.json';
     }
     getCurrentWeather() {
         return __awaiter(this, void 0, void 0, function* () {
-            const user = yield this.getUserConfig();
+            const user = this.getUserConfig();
             const queryParams = new Map();
             queryParams.set('key', user.apiKey);
-            queryParams.set('q', user.apiKey);
-            queryParams.set('', 'no');
+            queryParams.set('q', user.city);
+            queryParams.set('aqi', 'no');
             const resource = UrlHelper.addQueryParams(this.BASE_URL, queryParams);
             const httpHeaders = new Headers();
             httpHeaders.append('Content-Type', 'application/json');
@@ -39,15 +40,7 @@ export class WeatherService {
         });
     }
     getUserConfig() {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const userConfig = yield fetch('../../config/UserConfig.json').then(response => response.json());
-                return userConfig;
-            }
-            catch (error) {
-                throw new Error(`Error while parsing UserConfig.json: ${error}`);
-            }
-        });
+        return new UserConfig();
     }
 }
 //# sourceMappingURL=WeatherService.js.map

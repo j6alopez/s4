@@ -1,4 +1,4 @@
-import { ScoreType } from '../enums/ScoreType';
+import { ScoreType } from '../enums/ScoreType.js';
 export declare class JokeScore {
     value: string;
     date: string;

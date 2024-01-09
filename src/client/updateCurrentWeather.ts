@@ -1,5 +1,5 @@
-import {Weather} from '../domain/entitites/Weather';
-import {WeatherService} from '../domain/services/WeatherService';
+import {Weather} from '../domain/entitites/Weather.js';
+import {WeatherService} from '../domain/services/WeatherService.js';
 
 export async function updateCurrentWeather(): Promise<void> {
   const weatherService: WeatherService = new WeatherService();

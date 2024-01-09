@@ -1,16 +1,17 @@
-import {UrlHelper} from '../../utilites/UrlHelper';
-import {User} from '../entitites/User';
-import {Weather} from '../entitites/Weather';
+import {UserConfig} from '../../config/UserConfig.js';
+import {UrlHelper} from '../../utilites/UrlHelper.js';
+import {User} from '../entitites/User.js';
+import {Weather} from '../entitites/Weather.js';
 export class WeatherService {
   private readonly BASE_URL = 'http://api.weatherapi.com/v1/current.json';
 
   async getCurrentWeather(): Promise<Weather> {
-    const user: User = await this.getUserConfig();
+    const user: User = this.getUserConfig();
 
     const queryParams: Map<string, string> = new Map();
     queryParams.set('key', user.apiKey);
-    queryParams.set('q', user.apiKey);
-    queryParams.set('', 'no');
+    queryParams.set('q', user.city);
+    queryParams.set('aqi', 'no');
 
     const resource: URL = UrlHelper.addQueryParams(this.BASE_URL, queryParams);
     const httpHeaders: Headers = new Headers();
@@ -33,14 +34,7 @@ export class WeatherService {
     }
   }
 
-  private async getUserConfig(): Promise<User> {
-    try {
-      const userConfig: User = await fetch('../../config/UserConfig.json').then(
-        response => response.json()
-      );
-      return userConfig;
-    } catch (error) {
-      throw new Error(`Error while parsing UserConfig.json: ${error}`);
-    }
+  private getUserConfig(): User {
+    return new UserConfig();
   }
 }

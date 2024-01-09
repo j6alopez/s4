@@ -1,4 +1,4 @@
-import { Joke } from "../../entitites/Joke";
+import { Joke } from '../../entitites/Joke.js';
 export interface JokeService {
     getJoke(): Promise<Joke>;
 }

@@ -1,7 +1,7 @@
-import { JokeScoreService } from '../domain/services/scores/JokeScoreService.js';
+import { DefaultJokeScore } from '../domain/services/scores/DefaultJokeScore.js';
 import { jokesWithScores } from '../index.js';
 export function saveJokeScore(score) {
-    const jokeScoreService = new JokeScoreService();
+    const jokeScoreService = new DefaultJokeScore();
     jokeScoreService.scoreJoke(score);
     console.log(jokesWithScores);
 }

@@ -8,15 +8,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { HazDadService } from '../domain/services/jokes/HazDadService.js';
-import { JokeScoreService } from '../domain/services/scores/JokeScoreService.js';
+import { DefaultJokeScore } from '../domain/services/scores/DefaultJokeScore.js';
 import { jokesWithScores } from '../index.js';
-export function getNextJoke() {
+export function updateJoke() {
     return __awaiter(this, void 0, void 0, function* () {
         const jokeService = new HazDadService();
         const recievedJoke = yield jokeService.getJoke();
         const jokeElement = document.getElementById('joke');
         if (jokeElement !== null) {
-            const jokeScoreService = new JokeScoreService();
+            const jokeScoreService = new DefaultJokeScore();
             jokeElement.innerText = recievedJoke.value;
             jokeScoreService.trackJoke(recievedJoke);
             console.log(jokesWithScores);
