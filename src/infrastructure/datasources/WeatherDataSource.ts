@@ -1,13 +1,11 @@
-import {UserConfig} from '../../config/UserConfig.js';
+import {User} from '../../domain/entitites/User.js';
 import {UrlHelper} from '../../utilites/UrlHelper.js';
-import {User} from '../entitites/User.js';
-import {Weather} from '../entitites/Weather.js';
-export class WeatherService {
+import {WeatherDTO} from '../dtos/WeatherDTO.js';
+
+export class WeatherDataSource {
   private readonly BASE_URL = 'http://api.weatherapi.com/v1/current.json';
 
-  async getCurrentWeather(): Promise<Weather> {
-    const user: User = this.getUserConfig();
-
+  async getCurrentWeather(user: User): Promise<WeatherDTO> {
     const queryParams: Map<string, string> = new Map();
     queryParams.set('key', user.apiKey);
     queryParams.set('q', user.city);
@@ -26,15 +24,9 @@ export class WeatherService {
       if (!response.ok) {
         throw new Error('Current Weather was not possible to retrieve!');
       }
-
-      const currentWeather: Weather = await response.json();
-      return currentWeather;
+      return <WeatherDTO>await response.json();
     } catch (error) {
       throw new Error('Somethig wrong happened while parsing Weather!');
     }
-  }
-
-  private getUserConfig(): User {
-    return new UserConfig();
   }
 }

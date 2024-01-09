@@ -1,0 +1,1 @@
+{"version":3,"file":"WeatherMapper.js","sourceRoot":"","sources":["../../../src/domain/mappers/WeatherMapper.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,cAAc,EAAC,MAAM,gCAAgC,CAAC;AAG9D,MAAM,OAAO,aAAa;IACxB,MAAM,CAAC,WAAW,CAAC,UAAsB;QACvC,OAAO,IAAI,cAAc,CAAC,UAAU,CAAC,OAAO,CAAC,SAAS,CAAC,IAAI,EAAE,UAAU,CAAC,OAAO,CAAC,MAAM,CAAC,CAAC;IAC1F,CAAC;CACF"}

@@ -1,25 +1,26 @@
-import {Weather} from '../domain/entitites/Weather.js';
-import {WeatherService} from '../domain/services/WeatherService.js';
+import {CurrentWeather} from '../domain/entitites/CurrentWeather.js';
+import {DefualtWeather} from '../domain/services/weather/DefualtWeather.js';
+import {WeatherService} from '../domain/services/weather/WeatherService.js';
 
 export async function updateCurrentWeather(): Promise<void> {
-  const weatherService: WeatherService = new WeatherService();
-  const weather: Weather = await weatherService.getCurrentWeather();
-  upDateWeatherIcon(weather);
-  upDateTemperature(weather);
+  const weatherService: WeatherService = new DefualtWeather();
+  const currentWeather: CurrentWeather = await weatherService.getCurrentWeather();
+  upDateWeatherIcon(currentWeather);
+  upDateTemperature(currentWeather);
 }
 
-function upDateWeatherIcon(weather: Weather): void {
+function upDateWeatherIcon(weather: CurrentWeather): void {
   const icon: HTMLImageElement = document.getElementById('weather-icon') as HTMLImageElement;
 
   if (icon) {
-    icon.src = weather.current.condition.icon;
+    icon.src = weather.icon;
   }
 }
 
-function upDateTemperature(weather: Weather): void {
+function upDateTemperature(weather: CurrentWeather): void {
   const temperatureInfo: HTMLImageElement = document.getElementById('temperature-info') as HTMLImageElement;
 
   if (temperatureInfo) {
-    temperatureInfo.src = `${weather.current.temp_c} ºC`;
+    temperatureInfo.src = `${weather.temp_c} ºC`;
   }
 }

@@ -7,25 +7,25 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { WeatherService } from '../domain/services/WeatherService.js';
+import { DefualtWeather } from '../domain/services/weather/DefualtWeather.js';
 export function updateCurrentWeather() {
     return __awaiter(this, void 0, void 0, function* () {
-        const weatherService = new WeatherService();
-        const weather = yield weatherService.getCurrentWeather();
-        upDateWeatherIcon(weather);
-        upDateTemperature(weather);
+        const weatherService = new DefualtWeather();
+        const currentWeather = yield weatherService.getCurrentWeather();
+        upDateWeatherIcon(currentWeather);
+        upDateTemperature(currentWeather);
     });
 }
 function upDateWeatherIcon(weather) {
     const icon = document.getElementById('weather-icon');
     if (icon) {
-        icon.src = weather.current.condition.icon;
+        icon.src = weather.icon;
     }
 }
 function upDateTemperature(weather) {
     const temperatureInfo = document.getElementById('temperature-info');
     if (temperatureInfo) {
-        temperatureInfo.src = `${weather.current.temp_c} ºC`;
+        temperatureInfo.src = `${weather.temp_c} ºC`;
     }
 }
 //# sourceMappingURL=updateCurrentWeather.js.map

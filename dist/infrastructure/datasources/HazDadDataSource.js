@@ -7,18 +7,28 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { HazDadDataSource } from '../../../infrastructure/datasources/HazDadDataSource.js';
-import { JokeMapper } from '../../mappers/JokeMapper.js';
-export class HazDadService {
+export class HazDadDataSource {
     constructor() {
         this.BASE_URL = 'https://icanhazdadjoke.com';
     }
     getJoke() {
         return __awaiter(this, void 0, void 0, function* () {
-            const hazDadSource = new HazDadDataSource();
-            const hazDadJokeDTO = yield hazDadSource.getJoke();
-            return JokeMapper.fromDadJoke(hazDadJokeDTO);
+            const httpHeaders = new Headers();
+            httpHeaders.append('Accept', 'application/json');
+            try {
+                const response = yield fetch(this.BASE_URL, {
+                    method: 'GET',
+                    headers: httpHeaders,
+                });
+                if (!response.ok) {
+                    throw new Error('HazDad joke was not possible to retrieve');
+                }
+                return yield response.json();
+            }
+            catch (error) {
+                throw new Error('HazDad error while parsing');
+            }
         });
     }
 }
-//# sourceMappingURL=HazDadService.js.map
+//# sourceMappingURL=HazDadDataSource.js.map

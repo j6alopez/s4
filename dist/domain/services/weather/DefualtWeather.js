@@ -7,18 +7,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { HazDadDataSource } from '../../../infrastructure/datasources/HazDadDataSource.js';
-import { JokeMapper } from '../../mappers/JokeMapper.js';
-export class HazDadService {
-    constructor() {
-        this.BASE_URL = 'https://icanhazdadjoke.com';
-    }
-    getJoke() {
+import { UserConfig } from '../../../config/UserConfig.js';
+import { WeatherMapper } from '../../mappers/WeatherMapper.js';
+import { WeatherDataSource } from '../../../infrastructure/datasources/WeatherDataSource.js';
+export class DefualtWeather {
+    getCurrentWeather() {
         return __awaiter(this, void 0, void 0, function* () {
-            const hazDadSource = new HazDadDataSource();
-            const hazDadJokeDTO = yield hazDadSource.getJoke();
-            return JokeMapper.fromDadJoke(hazDadJokeDTO);
+            const weatherDataSource = new WeatherDataSource();
+            const user = this.getUserConfig();
+            const weatherDTO = yield weatherDataSource.getCurrentWeather(user);
+            return WeatherMapper.fromWeather(weatherDTO);
         });
     }
+    getUserConfig() {
+        return new UserConfig();
+    }
 }
-//# sourceMappingURL=HazDadService.js.map
+//# sourceMappingURL=DefualtWeather.js.map

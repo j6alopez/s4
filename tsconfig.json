@@ -110,6 +110,5 @@
   "include": [
     "src/**/*.ts",
     "test/**/*.ts",
-    "src/config/user-config.json"
   ]
 }
