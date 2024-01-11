@@ -1,0 +1,19 @@
+#next-joke {
+    color: black;
+    font-weight: bold;
+    border-color: black;
+    border-radius: 10px;
+    background-color: $custom-color !important;
+    box-shadow:  0.1em 0.1em 5em 0.2em white;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.score-container > button img {
+    background-color: $custom-color;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow:  0.1em 0.1em 6em 1em white;
+    &:hover{
+        transform: scale(1.1);
+    }
+}

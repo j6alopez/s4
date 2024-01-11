@@ -1,3 +1,10 @@
+// $btn-color: green;
+$custom-color: rgb(224, 224, 87);
+//Customized Bootstrap
+@import 'vendors/bootstrap/cards';
+//Bootstrap dependency
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 //custom
-@import 'layout/body';
+@import 'layout/weather_info';
+@import 'layout/containers';
+@import 'components/buttons';
