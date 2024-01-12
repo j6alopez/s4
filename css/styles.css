@@ -11859,6 +11859,13 @@ textarea.form-control-lg {
   border-right: 0.3rem solid;
 }
 
+img.auxiliary {
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  z-index: -1;
+}
+
 #main-content {
   color: white;
   background-image: url("../../images/blobs/main.svg");
@@ -11881,11 +11888,14 @@ textarea.form-control-lg {
 #next-joke {
   color: black;
   font-weight: bold;
-  border-color: black;
+  border-color: white;
   border-radius: 10px;
   background-color: rgb(224, 224, 87) !important;
-  box-shadow: 0.1em 0.1em 5em 0.2em white;
+  box-shadow: 0.1em 0.1em 0.5em 0.1em white;
   transition: transform 0.3s ease-in-out;
+}
+#next-joke:hover {
+  transform: scale(1.1);
 }
 
 .score-container > button img {
@@ -11893,6 +11903,7 @@ textarea.form-control-lg {
   background-size: cover;
   border-radius: 10px;
   box-shadow: 0.1em 0.1em 6em 1em white;
+  transition: transform 0.3s ease-in-out;
 }
 .score-container > button img:hover {
   transform: scale(1.1);

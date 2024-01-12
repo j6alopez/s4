@@ -8,7 +8,6 @@
     <!-- Customization with bootstrap-->
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
     <div class="container-fluid my-4">
         <div class="row mx-0">
@@ -19,34 +18,35 @@
             <h2 class="col-md-1 col-2 border-5 text-center" id="temperature-info">21ºC</h2>
         </div>
     </div>
+    <img class="auxiliary" src="images/blobs/auxiliar-one.svg" alt="">
     <div class="container-fluid my-5" id="main-content">
         <div class="row justify-content-center">
             <div class="col-12 text-center ">
                 <h2 class="my-5" id="hook">Preparat per riure?</h2>
-                <div class="row mx-auto my-5">
+                <div class="row mx-auto">
                     <div class="col-12">
-                            <p class="w-50 mx-auto fs-3 tex" id="joke">Lorem fistrum ese que llega no te digo trigo por no llamarte
+                            <p class="w-50 mx-auto fs-3 my-2" id="joke">Lorem fistrum ese que llega no te digo trigo por no llamarte
                                 Rodrigor llevame al sircoo se calle ustée.
                                 Amatomaa jarl va usté muy cargadoo qué dise usteer a gramenawer no te digo trigo por no
                                 llamarte Rodrigor.
                             </p>
-                        <div class="col-12 score-container my-5">
-                            <button class="col-md-1 col-2 btn btn-sm mx-3 h-25 " type="button" id="bad-score">
+                        <div class="row grid gap-lg-5 gap-1 my-5 justify-content-center score-container">
+                            <button class="col-lg-1 col-sm-2 btn p-lg-0 p-md-4 p-3" type="button" id="bad-score">
                                 <img class="img-fluid" src="images/icons/smiley-sad.svg" alt="smiley sad emoji">
                             </button>
-                            <button class="col-md-1 col-2 btn btn-sm mx-3 " type="button" id="normal-score">
+                            <button class="col-lg-1 col-sm-2 col-3 btn p-lg-0 p-md-4 p-3" type="button" id="normal-score">
                                 <img class="img-fluid" src="images/icons/normal-emoticon.svg" alt="normal emoji">
                             </button>
-                            <button class="col-md-1 col-2 btn btn-sm mx-3" type="button" id="good-score">
+                            <button class="col-lg-1 col-sm-2 col-3 btn p-lg-0 p-md-4 p-3" type="button" id="good-score">
                                 <img class="img-fluid" src="images/icons/laughing.svg" alt="smiley emoji">
                             </button>
                         </div>
-                        <button class="btn btn-primary col-3 mx-auto my-5 fs-2 d-block" id="next-joke">Següent
-                            Acudit</button>
+                        <button class="btn btn-primary mx-auto my-5 fs-2 d-block" id="next-joke">Següent Acudit</button>
                     </div>
                 </div>
             </div>
         </div>
+        <img class="auxiliary" src="images/blobs/auxiliar-two.svg" alt="" id="auxiliar-two">
     </div>
     <script type="module" src="dist/index.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
