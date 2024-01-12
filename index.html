@@ -8,7 +8,7 @@
     <!-- Customization with bootstrap-->
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="position-relative">
     <div class="container-fluid my-4">
         <div class="row mx-0">
             <div class="col-md-1 col-2" id="icon-info">
@@ -18,9 +18,9 @@
             <h2 class="col-md-1 col-2 border-5 text-center" id="temperature-info">21ºC</h2>
         </div>
     </div>
-    <img class="auxiliary" src="images/blobs/auxiliar-one.svg" alt="">
     <div class="container-fluid my-5" id="main-content">
         <div class="row justify-content-center">
+            <img class="position-absolute" src="images/blobs/auxiliar-one.svg" alt="" id="auxiliar-one">
             <div class="col-12 text-center ">
                 <h2 class="my-5" id="hook">Preparat per riure?</h2>
                 <div class="row mx-auto">
@@ -31,7 +31,7 @@
                                 llamarte Rodrigor.
                             </p>
                         <div class="row grid gap-lg-5 gap-1 my-5 justify-content-center score-container">
-                            <button class="col-lg-1 col-sm-2 btn p-lg-0 p-md-4 p-3" type="button" id="bad-score">
+                            <button class="col-lg-1 col-sm-2 col-3 btn p-lg-0 p-md-4 p-3" type="button" id="bad-score">
                                 <img class="img-fluid" src="images/icons/smiley-sad.svg" alt="smiley sad emoji">
                             </button>
                             <button class="col-lg-1 col-sm-2 col-3 btn p-lg-0 p-md-4 p-3" type="button" id="normal-score">
@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <img class="auxiliary" src="images/blobs/auxiliar-two.svg" alt="" id="auxiliar-two">
+        <img class="position-absolute" src="images/blobs/auxiliar-two.svg" alt="" id="auxiliar-two">
     </div>
     <script type="module" src="dist/index.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
