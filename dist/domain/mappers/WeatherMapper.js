@@ -1,7 +1,8 @@
 import { CurrentWeather } from '../entitites/CurrentWeather.js';
 export class WeatherMapper {
     static fromWeather(weatherDTO) {
-        return new CurrentWeather(weatherDTO.current.condition.icon, weatherDTO.current.temp_c);
+        const { current: { condition: { icon }, temp_c: temperature, }, } = weatherDTO;
+        return new CurrentWeather(icon, temperature);
     }
 }
 //# sourceMappingURL=WeatherMapper.js.map

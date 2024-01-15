@@ -9,10 +9,12 @@ export class JokeMapper {
     return new JokeScore(joke.value, date, ScoreType.NOT_SCORED);
   }
   static fromDadJoke(jokeDTO: HazDadJokeDTOResponse): Joke {
-    return new Joke(jokeDTO.joke);
+    const {joke} = jokeDTO;
+    return new Joke(joke);
   }
 
   static fromChuckJoke(jokeDTO: ChuckJokeDTOResponse): Joke {
-    return new Joke(jokeDTO.value);
+    const {value: joke} = jokeDTO;
+    return new Joke(joke);
   }
 }

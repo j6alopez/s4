@@ -1,7 +1,7 @@
 export class CurrentWeather {
-    constructor(icon, temp_c) {
+    constructor(icon, temperature) {
         this.icon = icon;
-        this.temp_c = temp_c;
+        this.temp_c = temperature;
     }
 }
 //# sourceMappingURL=CurrentWeather.js.map

@@ -3,6 +3,13 @@ import {WeatherDTOResponse} from '../../infrastructure/dtos/WeatherDTOResponse.j
 
 export class WeatherMapper {
   static fromWeather(weatherDTO: WeatherDTOResponse): CurrentWeather {
-    return new CurrentWeather(weatherDTO.current.condition.icon, weatherDTO.current.temp_c);
+    const {
+      current: {
+        condition: {icon},
+        temp_c: temperature,
+      },
+    } = weatherDTO;
+
+    return new CurrentWeather(icon, temperature);
   }
 }
