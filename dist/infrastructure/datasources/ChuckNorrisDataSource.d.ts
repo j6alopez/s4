@@ -1,5 +1,5 @@
-import { ChuckJokeDTO } from '../dtos/ChuckJokeDTO';
+import { ChuckJokeDTOResponse } from '../dtos/ChuckJokeDTOResponse';
 export declare class ChuckNorrisDataSource {
     private readonly BASE_ULR;
-    getJoke(): Promise<ChuckJokeDTO>;
+    getJoke(): Promise<ChuckJokeDTOResponse>;
 }

@@ -1,8 +1,8 @@
-import {HazDadJokeDTO} from '../dtos/HazDadJokeDTO';
+import {HazDadJokeDTOResponse} from '../dtos/HazDadJokeDTOResponse';
 
 export class HazDadDataSource {
   private readonly BASE_URL = 'https://icanhazdadjoke.com';
-  async getJoke(): Promise<HazDadJokeDTO> {
+  async getJoke(): Promise<HazDadJokeDTOResponse> {
     const httpHeaders: Headers = new Headers();
     httpHeaders.append('Accept', 'application/json');
 
@@ -16,7 +16,7 @@ export class HazDadDataSource {
         throw new Error('HazDad joke was not possible to retrieve');
       }
 
-      return <HazDadJokeDTO>await response.json();
+      return <HazDadJokeDTOResponse>await response.json();
     } catch (error) {
       throw new Error('HazDad error while parsing');
     }

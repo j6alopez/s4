@@ -10,10 +10,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { ChuckNorrisDataSource } from '../../../infrastructure/datasources/ChuckNorrisDataSource.js';
 import { JokeMapper } from '../../mappers/JokeMapper.js';
 export class ChuckNorrisService {
+    constructor() {
+        this.chuckDataSource = new ChuckNorrisDataSource();
+    }
     getJoke() {
         return __awaiter(this, void 0, void 0, function* () {
-            const chuckDataSource = new ChuckNorrisDataSource();
-            const chuckJokeDTO = yield chuckDataSource.getJoke();
+            const chuckJokeDTO = yield this.chuckDataSource.getJoke();
             return JokeMapper.fromChuckJoke(chuckJokeDTO);
         });
     }

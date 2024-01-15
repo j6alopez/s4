@@ -1,15 +1,18 @@
 import {HazDadDataSource} from '../../../infrastructure/datasources/HazDadDataSource.js';
-import {HazDadJokeDTO} from '../../../infrastructure/dtos/HazDadJokeDTO.js';
+import {HazDadJokeDTOResponse} from '../../../infrastructure/dtos/HazDadJokeDTOResponse.js';
 import {Joke} from '../../entitites/Joke.js';
 import {JokeMapper} from '../../mappers/JokeMapper.js';
 import {JokeService} from './JokeService.js';
 
 export class HazDadService implements JokeService {
-  private readonly BASE_URL = 'https://icanhazdadjoke.com';
+  private readonly hazDadSource: HazDadDataSource;
+
+  constructor() {
+    this.hazDadSource = new HazDadDataSource();
+  }
 
   async getJoke(): Promise<Joke> {
-    const hazDadSource: HazDadDataSource = new HazDadDataSource();
-    const hazDadJokeDTO: HazDadJokeDTO = await hazDadSource.getJoke();
+    const hazDadJokeDTO: HazDadJokeDTOResponse = await this.hazDadSource.getJoke();
 
     return JokeMapper.fromDadJoke(hazDadJokeDTO);
   }

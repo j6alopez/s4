@@ -1,4 +1,4 @@
-export interface WeatherDTO {
+export interface WeatherDTOResponse {
   location: {
     name: string;
     region: string;

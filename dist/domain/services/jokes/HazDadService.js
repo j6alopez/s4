@@ -11,12 +11,11 @@ import { HazDadDataSource } from '../../../infrastructure/datasources/HazDadData
 import { JokeMapper } from '../../mappers/JokeMapper.js';
 export class HazDadService {
     constructor() {
-        this.BASE_URL = 'https://icanhazdadjoke.com';
+        this.hazDadSource = new HazDadDataSource();
     }
     getJoke() {
         return __awaiter(this, void 0, void 0, function* () {
-            const hazDadSource = new HazDadDataSource();
-            const hazDadJokeDTO = yield hazDadSource.getJoke();
+            const hazDadJokeDTO = yield this.hazDadSource.getJoke();
             return JokeMapper.fromDadJoke(hazDadJokeDTO);
         });
     }
